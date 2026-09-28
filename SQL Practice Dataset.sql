@@ -189,5 +189,13 @@ FROM
 ) e
 WHERE SalaryRank <= 2;
 
+-- 21. Find the 5 employees with the earliest hire dates
 
+SELECT EmployeeID,
+       Name,
+       Department,
+       HireDate
+FROM Employees
+ORDER BY HireDate ASC
+LIMIT 5;
 
