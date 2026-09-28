@@ -167,3 +167,27 @@ WHERE YEAR(HireDate) =
     SELECT MAX(YEAR(HireDate))
     FROM Employees
 );
+
+-- 20. Top 2 highest-paid employees in each department
+
+SELECT EmployeeID,
+       Name,
+       Department,
+       Salary
+FROM
+(
+    SELECT EmployeeID,
+           Name,
+           Department,
+           Salary,
+           ROW_NUMBER() OVER
+           (
+               PARTITION BY Department
+               ORDER BY Salary DESC
+           ) AS SalaryRank
+    FROM Employees
+) e
+WHERE SalaryRank <= 2;
+
+
+
