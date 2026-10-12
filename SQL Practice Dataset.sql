@@ -12,7 +12,8 @@ LIMIT 1;
 
 SELECT MAX(Salary) AS SecondHighestSalary
 FROM Employees
-WHERE Salary < (SELECT MAX(Salary) FROM Employees);
+WHERE Salary < 
+	(SELECT MAX(Salary) FROM Employees);
 
 					-- 3. Average salary by department
 SELECT Department,
