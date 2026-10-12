@@ -1,3 +1,5 @@
+#creating practice data. set....
+
 create database PRAC;
 USE PRAC;
 
